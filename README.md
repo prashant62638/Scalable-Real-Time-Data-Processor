@@ -52,3 +52,4 @@ UI remains responsive under load
 backend/
 frontend/
 README.md
+Runs on: http://localhost:5173
