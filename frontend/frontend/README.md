@@ -1,16 +1,54 @@
-# React + Vite
+🚀 Scalable Real-Time Data Processor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Technical Assessment – AR Genix AI Solutions Pvt Ltd
 
-Currently, two official plugins are available:
+📌 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a full-stack real-time data processing system built to demonstrate performance-focused frontend rendering, secure backend design, and scalable data persistence.
 
-## React Compiler
+The application simulates a high-frequency data stream, efficiently renders 5,000+ live records, secures APIs using custom middleware, and stores incoming data in a database with an optimized schema.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🎯 Assessment Coverage
+Real-time data monitoring
+Virtualized rendering for 5,000+ records
+Efficient React state management
+Custom rate limiter (from scratch)
+Custom request validation middleware
+Database persistence with optimized schema
+Production-grade architecture & error handling
 
-## Expanding the ESLint configuration
+🖥️ Frontend (React.js)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Features
+
+Real-time data stream (1 record/second)
+Virtualized list for smooth performance
+Minimal re-renders using hooks & memoization
+Graceful handling of backend failures
+
+Why Virtualization?
+Only visible rows are rendered, keeping UI performance constant even with thousands of records.
+
+🔁 Backend (Node.js + Express)
+
+Asynchronous API for data ingestion
+Custom rate limiter using in-memory Map
+Request validation middleware
+Secure and controlled data processing
+Rate Limiting
+Per-IP request tracking
+
+Returns HTTP 429 when exceeded
+(No third-party libraries used)
+
+⚠️ Error Handling
+
+Backend unreachable → UI warning
+Rate limit exceeded → user-visible message
+Invalid payload → rejected immediately
+UI remains responsive under load
+
+📂 Project Structure
+backend/
+frontend/
+README.md
